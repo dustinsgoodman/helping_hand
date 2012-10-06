@@ -1,5 +1,9 @@
 HelpingHand::Application.routes.draw do
   root :to => 'user#index'
 
-  match 'user' => 'user#index', as: 'user'
+  resources :users,
+    :controller => :users
+  
+  resources :opportunities,
+    :controller => :opportunities
 end
