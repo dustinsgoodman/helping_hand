@@ -20,11 +20,17 @@ ActiveRecord::Schema.define(:version => 20121006010724) do
   end
 
   create_table "users", :force => true do |t|
-    t.string  "name"
-    t.string  "email"
+    t.string  "login",            :limit => 20,                   :null => false
+    t.string  "first_name",                                       :null => false
+    t.string  "last_name",                                        :null => false
+    t.string  "email",            :limit => 100,                  :null => false
+    t.string  "crypted_password",                                 :null => false
+    t.string  "password_salt",                                    :null => false
     t.integer "location_id"
-    t.float   "rating"
-    t.integer "age"
+    t.float   "rating",                          :default => 0.0, :null => false
+    t.integer "age",                                              :null => false
   end
+
+  add_index "users", ["login"], :name => "index_users_on_login", :unique => true
 
 end
