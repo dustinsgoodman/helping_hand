@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
-  helper_method :current_user, :logged_in?, :admin?
+  helper_method :current_user, :logged_in?, :admin?, :require_user
   
   def current_user
     unless @current_user_loaded
@@ -29,6 +29,15 @@ protected
     @current_user_session
   end
   
+  def require_user
+    unless logged_in?
+      store_location
+      flash[:notice] = "Please log in to continue"
+      redirect_to login_path
+      return false
+    end
+  end
+  
   def log_in_as(user)
     log_out
     @user_session = UserSession.new(user)
@@ -51,8 +60,8 @@ protected
 
   def store_location
     if request.format.html?
-      logger.debug "Storing return location: #{request.request_uri}"
-      session[:return_to] = request.request_uri
+      #logger.debug "Storing return location: #{request.request_uri}"
+      #session[:return_to] = request.request_uri
     end
   end
 
