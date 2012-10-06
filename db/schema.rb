@@ -11,12 +11,41 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121006010724) do
+ActiveRecord::Schema.define(:version => 20121006143234) do
+
+  create_table "locations", :force => true do |t|
+    t.string  "name"
+    t.string  "county"
+    t.string  "city"
+    t.string  "state"
+    t.string  "addr"
+    t.float   "long"
+    t.float   "lat"
+    t.integer "zip"
+  end
+
+  create_table "opportunities", :force => true do |t|
+    t.string   "name",                       :null => false
+    t.text     "description"
+    t.integer  "owner_id",                   :null => false
+    t.integer  "score"
+    t.integer  "max_ppl"
+    t.integer  "min_ppl",                    :null => false
+    t.integer  "num_ppl",     :default => 0, :null => false
+    t.integer  "min_age"
+    t.integer  "max_age"
+    t.integer  "location_id",                :null => false
+    t.datetime "event_start",                :null => false
+    t.datetime "event_end",                  :null => false
+  end
 
   create_table "sponsors", :force => true do |t|
     t.string  "name"
     t.string  "website"
-    t.decimal "rating",  :precision => 2, :scale => 1
+    t.string  "crypted_password",                                              :null => false
+    t.string  "password",                                                      :null => false
+    t.string  "email",            :limit => 100,                               :null => false
+    t.decimal "rating",                          :precision => 2, :scale => 1
   end
 
   create_table "users", :force => true do |t|
