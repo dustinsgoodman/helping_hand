@@ -31,6 +31,7 @@ class OpportunitiesController < ApplicationController
       redirect_to_referrer_or opportunities_url
     else
       render :action => :edit
+    end
   end
   
   def destroy
