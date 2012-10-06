@@ -1,9 +1,9 @@
 HelpingHand::Application.routes.draw do
-  root :to => 'users#index'
+  root :to => 'user#show'
 
   resources :users,
     :controller => :users
-  
+
   resources :opportunities,
     :controller => :opportunities
 end
