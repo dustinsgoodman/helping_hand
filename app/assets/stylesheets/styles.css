@@ -440,4 +440,12 @@ html[xmlns] .slides {
 .flex-control-nav li a.active {
   background-position: 0 -26px;
   cursor: default; }
->>>>>>> e361bd8daa4001d71c3ddcc2515057bbcf08ebe6
+
+.opportunity-table .date-line{
+	margin-bottom: 3px;
+	padding-left: 2px;
+	border-bottom: 1px solid #CCC;
+}
+.opportunity-table .opp-desc-line{
+	padding-left:15px;
+}
