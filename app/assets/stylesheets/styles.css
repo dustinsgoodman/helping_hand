@@ -253,6 +253,12 @@ ul.nav a:hover, ul.nav a:active {
   #pagefooter .navbar p {
     color: #e5e5e5; }
 
+
+.name-info-block .name-info-label{
+	color:#aaa;
+	width:100px;
+}
+
 section {
   display: block;
   width: 100%; }
@@ -434,3 +440,4 @@ html[xmlns] .slides {
 .flex-control-nav li a.active {
   background-position: 0 -26px;
   cursor: default; }
+>>>>>>> e361bd8daa4001d71c3ddcc2515057bbcf08ebe6

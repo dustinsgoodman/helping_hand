@@ -1,3 +1,55 @@
+<table border="0" bordercolor="#ccc" style="" width="850" cellpadding="0" cellspacing="0">
+	<tr>
+		<td width="250px;">Face Column</td>
+		<td>
+  		
+  		<table border="0" bordercolor="" style="background-color:" width="600" cellpadding="0" cellspacing="0">
+      	<tr>
+      		<td>
+      			<span class="name-info-block">
+      	      <h1 style="padding-left:20px;"><%= @user.name %></h1>
+        		  <table border="0" bordercolor="#ccc" style="margin:20px;" width="600" cellpadding="0" cellspacing="0">
+              	<tr>
+              		<td class="name-info-label">Location:</td>
+              		<td>Value</td>
+              	</tr>
+              	<tr>
+              		<td class="name-info-label">Rating:</td>
+              		<td><%= @user.rating %></td>
+              	</tr>
+              	<tr>
+              		<td class="name-info-label">Age:</td>
+              		<td><%= @user.age %></td>
+              	</tr>
+              	<tr>
+              		<td class="name-info-label">Email:</td>
+              		<td><%= @user.email %></td>
+              </table>  
+      		  </span> <!-- End name-info-block -->  
+      		</td>
+      	</tr>
+      	<tr>
+      		<td>Upcoming Events</td>
+      	</tr>
+      	<tr>
+      		<td>Past Events</td>
+      	</tr>
+      </table>
+      
+      
+		</td>
+	</tr>
+</table>
+
+
+
+
+
+
+
+
+
+
 <div class="profile">
 	<div class="profile_pic">
 		
@@ -12,7 +64,7 @@
 			</tr>
 			<tr>
 				<td>Location</td>
-				<td></td>
+				<td><%=h @user.location %></td>
 			</tr>
 			<tr>
 				<td>Rating</td>
