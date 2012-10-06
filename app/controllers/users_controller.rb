@@ -1,6 +1,6 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
   def index
-    @user = User.find(params[:id])
+    @user = User.find(:all)
   end
 
   def new
