@@ -256,9 +256,17 @@ ul.nav a:hover, ul.nav a:active {
   #pagefooter p {
     color: #e5e5e5; }
 
+<<<<<<< HEAD
 #main_content {
   margin: 0 0 1.5em 0;
   overflow: hidden; }
+=======
+
+.name-info-block .name-info-label{
+	color:#aaa;
+	width:100px;
+}
+>>>>>>> 05066be7386131d5addfc38c91432d177f9f0384
 
 section {
   display: block;
@@ -319,5 +327,12 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
   -moz-border-radius: 15px;
   border-radius: 15px; }
 
+<<<<<<< HEAD
 button, input[type="button"], input[type="reset"], input[type="submit"] {
   background: #a5bec4; }
+=======
+.flex-control-nav li a.active {
+  background-position: 0 -26px;
+  cursor: default; }
+>>>>>>> e361bd8daa4001d71c3ddcc2515057bbcf08ebe6
+>>>>>>> 05066be7386131d5addfc38c91432d177f9f0384
