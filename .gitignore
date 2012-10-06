@@ -18,3 +18,5 @@
 /log/development.log
 /tmp/pids/server.pid
 /tmp/cache/assets/*
+
+/g++-4.2
