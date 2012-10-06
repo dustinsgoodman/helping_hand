@@ -27,10 +27,11 @@ body[role="main"]
 		> a
 			@include hellenic
 			@include biggerText
+			float: left
 			margin: 0
+			display: block
 			text-transform: uppercase
 			padding: 0
-			position: absolute
 			color: $dark_green
 
 #headerInfo, #footerInfo
@@ -38,10 +39,10 @@ body[role="main"]
 	margin: 0 auto
 
 ul.nav
-	width: 100%
+	width: 50%
 
-.navbar .nav > li
-	float: right
+	li
+		float: right
 
 	a, a:visited
 		font-size: 1em
@@ -61,8 +62,9 @@ ul.nav
 	p
 		color: $light
 
-#intro
-	border: 1px solid pink
+section
+	background: pink
+	display: block
 	img
 		border: 10px solid $light_gray
 		float: left
