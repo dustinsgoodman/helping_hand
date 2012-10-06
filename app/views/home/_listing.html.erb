@@ -4,14 +4,11 @@
 <div class = "opportunity-list">
   <h1><%= opportunity.name %></h1>
     <p><%= opportunity.description %></p>
-
   <ul>
     <li> <%= opportunity.location%></li>
-  </ul>
-  <ul>
     <li><%= opportunity.num_ppl%></li>
     <li><%= opportunity.max_ppl%></li>
     <li><%= opportunity.event_start%></li>
-    <li><%= Datetime.strptime('#{opportunity.event_end}', '%d-%m-%Y %I:%M:%S %p')%></li>
+    <li><%= opportunity.event_end%></li>
   </ul>
 </div>
