@@ -217,7 +217,7 @@ h2, h3 {
   text-decoration: uppecase;
   border-bottom: 2px solid #a5bec4; }
 
-a.brand {
+header a.brand {
   font-family: "hellenic-wide", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -225,12 +225,13 @@ a.brand {
   line-height: 1.709em;
   margin-top: 0.854em;
   margin-bottom: 0em;
-  line-height: 2em;
   float: left;
   margin: 0;
   display: block;
   text-transform: uppercase;
-  padding: 0;
+  padding: 0; }
+
+header a.brand:hover {
   color: #85a2aa; }
 
 .headerCenter {
@@ -246,14 +247,24 @@ a.brand {
 
 #headerInfo, #footerInfo {
   max-width: 62em;
-  margin: 0 auto; }
+  margin: 0 auto;
+  overflow: hidden; }
 
-ul.nav a, ul.nav a:visited {
+#footerInfo {
+  color: #708b90; }
+
+#footerRight {
+  width: 30%;
+  float: right; }
+
+header ul.nav a, header ul.nav a:visited {
   font-size: 1em;
   color: #1d1d1f;
-  text-shadow: white 1px 1px 0; }
-ul.nav a:hover, ul.nav a:active {
-  color: #708b90; }
+  text-shadow: white 1px 1px 0;
+  margin: 0; }
+header ul.nav a:hover, header ul.nav a:active {
+  background: none;
+  color: #708b90 !important; }
 
 .navbar-fixed-bottom {
   background: #85a2aa; }
@@ -261,9 +272,9 @@ ul.nav a:hover, ul.nav a:active {
 #pagefooter {
   clear: both;
   padding: 1.5em 0;
-  background: #a5bec4; }
+  border-bottom: 10px solid #a5bec4; }
   #pagefooter p {
-    color: #e5e5e5; }
+    color: #708b90; }
 
 #main_content {
   margin: 0 0 1.5em 0;
@@ -322,6 +333,14 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
 button, input[type="button"], input[type="reset"], input[type="submit"] {
   background: #a5bec4; }
 
+@media only screen and (min-width: 320px) and (max-width: 650px) {
+  ul.nav a, ul.nav a:visited {
+    font-size: 1em;
+    color: #1d1d1f;
+    text-shadow: white 1px 1px 0; }
+  ul.nav a:hover, ul.nav a:active {
+    color: #708b90;
+    background: #a5bec4; } }
 @media only screen and (min-width: 320px) and (max-width: 767px) {
   .left_side {
     float: none;

@@ -29,15 +29,17 @@ h2, h3
 	border-bottom: 2px solid $light_green
 
 ////////// HEADER ////////////////
-a.brand
+header a.brand
 	@include hellenic
 	@include biggerText
-	line-height: 2em
 	float: left
 	margin: 0
 	display: block
 	text-transform: uppercase
 	padding: 0
+	
+
+header a.brand:hover
 	color: $dark_green
 
 .headerCenter
@@ -54,15 +56,26 @@ a.brand
 #headerInfo, #footerInfo
 	max-width: 62em
 	margin: 0 auto
+	overflow: hidden
 
-ul.nav
+#footerInfo
+	color: $darker_green
+
+
+#footerRight
+	width: 30%
+	float: right
+
+header ul.nav
 	a, a:visited
 		font-size: 1em
 		color: $dark_gray
 		text-shadow: #fff 1px 1px 0
+		margin: 0
 
 	a:hover, a:active
-		color: $darker_green
+		background: none
+		color: $darker_green !important
 
 
 ///////////// FOOOTER ///////////////
@@ -74,10 +87,10 @@ ul.nav
 #pagefooter
 	clear: both
 	padding: 1.5em 0
-	background: $light_green
+	border-bottom: 10px solid $light_green
 
 	p
-		color: $light
+		color: $darker_green
 
 ////////////// MAIN CONTENT ///////////////
 
@@ -142,6 +155,17 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
 
 button, input[type="button"], input[type="reset"], input[type="submit"]
 	background: $light_green
+
+@media only screen and (min-width: 320px) and (max-width: 650px)
+	ul.nav
+		a, a:visited
+			font-size: 1em
+			color: $dark_gray
+			text-shadow: #fff 1px 1px 0
+
+		a:hover, a:active
+			color: $darker_green
+			background: $light_green
 
 @media only screen and (min-width: 320px) and (max-width: 767px)
 	.left_side
