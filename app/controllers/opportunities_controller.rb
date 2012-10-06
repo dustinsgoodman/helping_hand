@@ -28,7 +28,6 @@ class OpportunitiesController < ApplicationController
     @opportunity.update_attributes(params[:opportunity])
     if @opportunity.valid?
       flash[:notice] = "Volunteering event updated successfully."
-      #TODO update to correctly view index of events
       redirect_to_referrer_or opportunities_url
     else
       render :action => :edit
@@ -36,11 +35,19 @@ class OpportunitiesController < ApplicationController
   
   def destroy
     @opportunity.destroy
-    #TODO: update redirection for deleted opportunities 
-    redirect_to user_url
+    redirect_to user_url(current_user)
   end
  
   def show
+  end
+  
+  def eligible?
+    if @opportunity.max_ppl > num_ppl
+      if current_user.age >= @opportunity.min_age && current_user.age <= @opportunity.max_age
+        true
+      end
+    end
+    false
   end
   
   private
