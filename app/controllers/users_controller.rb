@@ -27,7 +27,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(params)
+    @user = User.create(params[:user])
     if @user.save
       flash[:notice] = "User created succesfully"
       render :action => :show

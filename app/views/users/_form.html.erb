@@ -1,0 +1,18 @@
+<%= form.label :first_name %>
+<%= form.text_field :first_name %>
+<br />
+<%= form.label :last_name %>
+<%= form.text_field :last_name %>
+<br />
+<%= form.label :login %><br />
+<%= form.text_field :login %><br />
+<br />
+<%= form.label :password, form.object.new_record? ? nil : "Change password" %><br />
+<%= form.password_field :password %><br />
+<br />
+<%= form.label :password_confirmation %><br />
+<%= form.password_field :password_confirmation %><br />
+<br />
+<%= form.label :age %>
+<%= form.text_field :age %>
+<br />

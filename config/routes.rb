@@ -1,15 +1,12 @@
 HelpingHand::Application.routes.draw do
   root :controller => :home, :action => :index
 
-  resources :users,
-    :controller => :users
+  resource :account, :controller => "users"
+  resources :users
 
-  resource :user_session, :only => [:new, :create, :destroy]
-  with_options :controller => "user_sessions" do |sess|
-    sess.get '/login', :action => 'new'
-    sess.post '/logout', :action => 'destroy',
-      :conditions => {:method => :delete}
-  end
+  resource :user_sessions
+  match "login", :to => 'user_sessions#new', :action => 'login'
+  match "logout", :to => 'user_session#destroy', :action => 'logout'
   
   resources :opportunities,
     :controller => :opportunities

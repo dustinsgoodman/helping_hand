@@ -1,14 +1,14 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery
-  
-  helper_method :current_user, :logged_in?, :admin?, :require_user
-  
+ 
+  helper :all
+  helper_method :current_user, :current_user_session, :logged_in?, :admin?, :require_user
+ 
   def current_user
-    unless @current_user_loaded
-      @current_user = (current_user_session && current_user_session.user) || nil
-      @current_user_loaded = true
+    if defined?(@current_user)
+      @current_user
+    else
+      @current_user = current_user_session && curent_user_session.record
     end
-    @current_user
   end
   
   def logged_in?
@@ -22,11 +22,11 @@ class ApplicationController < ActionController::Base
 protected
 
   def current_user_session
-    unless @current_user_session_loaded
+    if defined?(@current_user_session)
+      @current_user_session
+    else
       @current_user_session = UserSession.find
-      @current_user_session_loaded = true
     end
-    @current_user_session
   end
   
   def require_user
@@ -34,6 +34,13 @@ protected
       store_location
       flash[:notice] = "Please log in to continue"
       redirect_to login_path
+      return false
+    end
+  end
+  
+  def require_no_user
+    if logged_in?
+      redirect_to account_path
       return false
     end
   end
@@ -50,34 +57,17 @@ protected
       flash.delete(:return_to)
     end
   end
-  
-    def require_no_user
-    if logged_in?
-      redirect_to account_path
-      return false
-    end
-  end
 
   def store_location
-    if request.format.html?
-      #logger.debug "Storing return location: #{request.request_uri}"
-      #session[:return_to] = request.request_uri
-    end
+    session[:return_to] = request.request_uri
   end
 
   def keep_location
   end
   
    def redirect_to_referrer_or(default, *args)
-    if session[:return_to] && (session[:return_to] != request.request_uri)
-      dest = session[:return_to]
-      session.delete(:return_to)
-      logger.debug "Using saved location for redirect: #{dest}"
-      redirect_to dest, *args
-    else
-      logger.debug "Using default location for redirect: #{default}"
-      redirect_to default, *args
-    end
+    redirect_to(session[:return_to] || default)
+    session[:return_to] = nil
   end
   
   def redirect_home

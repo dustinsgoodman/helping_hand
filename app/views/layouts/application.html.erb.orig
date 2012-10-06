@@ -8,6 +8,7 @@
 </head>
 <body>
   <header id="userbar">
+<<<<<<< Updated upstream
       <div class="navbar navbar-fixed-top">
           <div class="navbar-inner">
               <div class="container">
@@ -26,6 +27,7 @@
               </div>
             </div>
           </div>
+=======
     <nav>
       <ul>
         <% unless logged_in? %>
@@ -39,6 +41,7 @@
         <% end %>
       </ul>
     </nav>
+>>>>>>> Stashed changes
   </header>
 
   <!-- <header id="masthead">
