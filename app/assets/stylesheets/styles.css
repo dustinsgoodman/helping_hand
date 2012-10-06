@@ -247,3 +247,8 @@ ul.nav {
   padding: 1.5em 0; }
   #pagefooter .navbar p {
     color: #e5e5e5; }
+
+.name-info-block .name-info-label{
+	color:#aaa;
+	width:100px;
+}
