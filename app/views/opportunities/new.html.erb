@@ -1,0 +1,17 @@
+<p>This is the opportunity creation page</p>
+
+<%= form_for @opportunity do |f| %>
+  <%= f.label :name, 'Event Name' %>:
+  <%= f.text_field :name %><br />
+  <%= f.label :decription, 'Event Description' %>:
+  <%= f.text_field :description %><br />
+  <%= f.label :event_start, 'Start Date and Time' %>:
+  <%= f.text_field :event_start %><br />
+  <%= f.label :event_end, 'End Date and Time' %>:
+  <%= f.text_field :event_end %><br />
+  <%= f.label :min_ppl, 'Minimum Number of Volunteers' %>:
+  <%= f.text_field :min_ppl %><br />
+  <%= f.label :max_ppl, 'Maximum Number of Volunteers' %>:
+  <%= f.text_field :max_ppl %><br />
+  <%= f.submit %>
+<% end %>

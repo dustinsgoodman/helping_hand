@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121006150625) do
+ActiveRecord::Schema.define(:version => 20121006163109) do
 
   create_table "locations", :force => true do |t|
     t.string  "name"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20121006150625) do
     t.float   "long"
     t.float   "lat"
     t.integer "zip"
+    t.integer "opportunity_id"
   end
 
   create_table "opportunities", :force => true do |t|
@@ -49,15 +50,25 @@ ActiveRecord::Schema.define(:version => 20121006150625) do
   end
 
   create_table "users", :force => true do |t|
-    t.string  "login",            :limit => 20,                   :null => false
-    t.string  "first_name",                                       :null => false
-    t.string  "last_name",                                        :null => false
-    t.string  "email",            :limit => 100,                  :null => false
-    t.string  "crypted_password",                                 :null => false
-    t.string  "password_salt",                                    :null => false
-    t.integer "location_id"
-    t.float   "rating",                          :default => 0.0, :null => false
-    t.integer "age",                                              :null => false
+    t.string   "login",               :limit => 20,                   :null => false
+    t.string   "email",               :limit => 100,                  :null => false
+    t.string   "crypted_password",                                    :null => false
+    t.string   "password_salt",                                       :null => false
+    t.string   "persistence_token",                                   :null => false
+    t.string   "single_access_token",                                 :null => false
+    t.string   "perishable_token",                                    :null => false
+    t.integer  "login_count",                        :default => 0,   :null => false
+    t.integer  "failed_login_count",                 :default => 0,   :null => false
+    t.datetime "last_request_at"
+    t.datetime "current_login_at"
+    t.datetime "last_login_at"
+    t.string   "current_login_ip"
+    t.string   "last_login_ip"
+    t.string   "first_name",                                          :null => false
+    t.string   "last_name",                                           :null => false
+    t.integer  "location_id"
+    t.float    "rating",                             :default => 0.0, :null => false
+    t.integer  "age",                                                 :null => false
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true
