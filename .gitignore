@@ -20,3 +20,4 @@
 /tmp/cache/assets/*
 
 /g++-4.2
+/db/development.sqlite3

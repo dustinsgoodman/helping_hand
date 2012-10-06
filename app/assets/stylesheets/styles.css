@@ -361,6 +361,5 @@ button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type=
 @media only screen and (min-width: 767px) {
   .left_side {
     float: left; }
-
   .right_side {
     float: right; } }
