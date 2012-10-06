@@ -1,7 +1,12 @@
 class UsersController < ApplicationController
   
-  before_filter(:find_user, :only => [:show, :edit, :update, :destroy])
+  skip_before_filter :store_location, :except => [:show]
+  before_filter :keep_location
+  
   before_filter :require_no_user, :only => [:new, :create]
+  before_filter :require_user, :only => [:show, :update, :change_password]
+  
+  before_filter(:find_user, :only => [:show, :edit, :update, :destroy, :change_password])
   
   def index
     @user = User.find(:all)
@@ -47,7 +52,12 @@ class UsersController < ApplicationController
   private
   
   def find_user
-    @user = User.find(:first, params[:id])
+    if logged_in?
+      @user = current_user
+    else
+      flash[:error] = "You must be logged in."
+      redirect_home
+    end
   end
 
 end
