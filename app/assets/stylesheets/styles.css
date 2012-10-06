@@ -208,6 +208,15 @@ body {
   margin: 0 auto;
   background: #e5e5e5; }
 
+h2, h3 {
+  font-family: "jubilat", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.171em;
+  margin: 0.6em 0 0.681em 0;
+  text-decoration: uppecase;
+  border-bottom: 2px solid #a5bec4; }
+
 a.brand {
   font-family: "hellenic-wide", sans-serif;
   font-style: normal;
@@ -256,17 +265,9 @@ ul.nav a:hover, ul.nav a:active {
   #pagefooter p {
     color: #e5e5e5; }
 
-<<<<<<< HEAD
 #main_content {
   margin: 0 0 1.5em 0;
   overflow: hidden; }
-=======
-
-.name-info-block .name-info-label{
-	color:#aaa;
-	width:100px;
-}
->>>>>>> 05066be7386131d5addfc38c91432d177f9f0384
 
 section {
   display: block;
@@ -289,15 +290,6 @@ section {
   padding: 0 0 0 2%; }
   .right_side form input {
     width: 100%; }
-
-h2, h3 {
-  font-family: "jubilat", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1.171em;
-  margin: 0.6em 0 0.681em 0;
-  text-decoration: uppecase;
-  border-bottom: 2px solid #a5bec4; }
 
 .pull-left {
   float: none;
@@ -327,12 +319,20 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
   -moz-border-radius: 15px;
   border-radius: 15px; }
 
-<<<<<<< HEAD
 button, input[type="button"], input[type="reset"], input[type="submit"] {
   background: #a5bec4; }
-=======
-.flex-control-nav li a.active {
-  background-position: 0 -26px;
-  cursor: default; }
->>>>>>> e361bd8daa4001d71c3ddcc2515057bbcf08ebe6
->>>>>>> 05066be7386131d5addfc38c91432d177f9f0384
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .left_side {
+    float: none;
+    width: 100%; }
+
+  .right_side {
+    float: none;
+    width: 100%; } }
+@media only screen and (min-width: 767px) {
+  .left_side {
+    float: left; }
+
+  .right_side {
+    float: right; } }
