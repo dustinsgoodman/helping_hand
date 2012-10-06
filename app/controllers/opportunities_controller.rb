@@ -8,9 +8,26 @@ class OpportunitiesController < ApplicationController
   end
   
   def create
-    @opportunity = Opportunity.new(params[:opportunity])
-    
-    if @oppportunity.save
+    start = params["opportunity"]["event_start"]
+    temp = start[0..1]
+    start[0..1] = start[3..4]
+    start[3..4] = temp
+        #params["opportunity"]["event_start"] = start
+    dend = params["opportunity"]["event_end"]
+    temp = dend[0..1]
+    dend[0..1] = dend[3..4]
+    dend[3..4] = temp
+    params["opportunity"]["event_start"] = dend
+    finalstart = DateTime.parse(start)
+    finaldend = DateTime.parse(dend)
+    # finalstart = DateTime.parse(params["opportunity"]["event_start"])
+    # finaldend = DateTime.parse(params["opportunity"]["event_end"])
+    #params["opportunity"]["event_start"] = DateTime.parse(params["opportunity"]["event_start"])
+    #params["opportunity"]["event_end"] = DateTime.parse(params["opportunity"]["event_end"]) 
+    #@opportunity = Opportunity.new(params["opportunity"])
+    @opportunity = Opportunity.new(:name => params["opportunity"]["name"], :description => params["opportunity"]["description"], :max_ppl => params["opportunity"]["max_ppl"], :min_ppl => params["opportunity"]["min_ppl"], :num_ppl => 1, :event_start => finalstart, :event_end => finaldend, :location => params["opportunity"]["location"])
+    q = @opportunity
+    if q.save
       flash[:notice] = "Volunteering event created successfully."
       render :action => :show
     else

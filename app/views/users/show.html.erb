@@ -1,9 +1,13 @@
-<table border="0" bordercolor="#ccc" style="" width="850" cellpadding="0" cellspacing="0">
+<table border="0" bordercolor="#ccc" style="margin-left: auto; margin-right: auto;" width="850" cellpadding="0" cellspacing="0">
 	<tr>
-		<td width="250px;">Face Column</td>
+		<td width="250px;" height="287px;" style="border-right:2px solid #ccc;vertical-align:top;">
+
+		  <img src="http://www.supplies4parties.co.uk/ekmps/shops/4parties/images/mr-bean-rowan-atkinson-famous-celebrity-cardboard-party-face-mask-4939-p.jpg">
+
+		</td>
 		<td>
   		
-  		<table border="0" bordercolor="" style="background-color:" width="600" cellpadding="0" cellspacing="0">
+  		<table border="0" bordercolor="" style="" width="600" cellpadding="0" cellspacing="0">
       	<tr>
       		<td>
       			<span class="name-info-block">
@@ -11,7 +15,7 @@
         		  <table border="0" bordercolor="#ccc" style="margin:20px;" width="600" cellpadding="0" cellspacing="0">
               	<tr>
               		<td class="name-info-label">Location:</td>
-              		<td>Value</td>
+              		<td>Location<%# @user.location %></td>
               	</tr>
               	<tr>
               		<td class="name-info-label">Rating:</td>
@@ -29,13 +33,52 @@
       		</td>
       	</tr>
       	<tr>
-      		<td>Upcoming Events</td>
+      		<td>
+      		  <table class="opportunity-table" id="future-opps" border="0" bordercolor="" style="margin:20px; background-color:" width="600" cellpadding="0" cellspacing="0">
+            	<tr>
+            		<td width="100%" style="border-top:2px #ccc solid; background:#85A2AA; color:white;padding:2px;" ><%= @user.first_name %>'s upcoming events</td>
+            	</tr>
+            	<tr> <!-- Loop through events today and in the future, up to 5 events -->
+            		<td style="padding-top:20px" class="opp-list-block">
+            		<div class="date-line">October 10, 2012</div><!-- Loop through all events on this day -->
+            		<div class="opp-desc-line"><%= @user.first_name %> is going to [opportunity name] at [location.city], [location.state]</div>
+            		<div class="opp-desc-line"><%= @user.first_name %> is going to [opportunity name] at [location.city], [location.state]</div>
+            		</td>
+            	</tr>
+            	<tr>
+            	  <td style="padding-top:20px" class="opp-list-block">
+            		<div class="date-line">October 12, 2012</div><!-- Loop through all events on this day -->
+            		<div class="opp-desc-line"><%= @user.first_name %> is going to [opportunity name] at [location.city], [location.state]</div>
+            		</td>
+          	  </tr>
+            </table>
+            
+    		  </td>
       	</tr>
       	<tr>
-      		<td>Past Events</td>
+      		<td>
+      		  <table class="opportunity-table" id="future-opps" border="0" bordercolor="" style="margin:20px; background-color:" width="600" cellpadding="0" cellspacing="0">
+            	<tr>
+            		<td width="100%" style="border-top:2px #ccc solid; background:#85A2AA; color:white;padding:2px;" ><%= @user.first_name %>'s past events</td>
+            	</tr>
+            	<tr> <!-- Loop through up to 5 past events -->
+            		<td style="padding-top:20px" class="opp-list-block">
+            		<div class="date-line">October 1, 2012</div><!-- Loop through all events on this day -->
+            		<div class="opp-desc-line"><%= @user.first_name %> is going to [opportunity name] at [location.city], [location.state]</div>
+            		<div class="opp-desc-line"><%= @user.first_name %> is going to [opportunity name] at [location.city], [location.state]</div>
+            		</td>
+            	</tr>
+            	<tr>
+            	  <td style="padding-top:20px" class="opp-list-block">
+            		<div class="date-line">September 25, 2012</div><!-- Loop through all events on this day -->
+            		<div class="opp-desc-line"><%= @user.first_name %> is going to [opportunity name] at [location.city], [location.state]</div>
+            		</td>
+          	  </tr>
+            </table>
+      		  
+      		</td>
       	</tr>
-      </table>
-      
+      </table>      
       
 		</td>
 	</tr>
@@ -47,7 +90,7 @@
 
 
 
-
+<% if false %>
 
 
 <div class="profile">
@@ -64,7 +107,7 @@
 			</tr>
 			<tr>
 				<td>Location</td>
-				<td><%=h @user.location %></td>
+				<td>Location<%#=h @user.location %></td>
 			</tr>
 			<tr>
 				<td>Rating</td>
@@ -107,7 +150,7 @@
   <b>Current login ip:</b>
   <%=h @user.current_login_ip %>
 </p>
+<% end %>
 
-
-<%= link_to 'Edit', edit_account_path %>
+<%= link_to 'Edit', edit_user_path %>
 </div>
