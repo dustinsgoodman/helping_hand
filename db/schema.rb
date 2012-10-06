@@ -11,21 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121006012711) do
-
-  create_table "opportunities", :force => true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.boolean  "quota"
-    t.boolean  "eligible"
-    t.integer  "owner_id"
-    t.integer  "score"
-    t.integer  "max_ppl"
-    t.integer  "min_ppl"
-    t.integer  "location_id"
-    t.datetime "event_start"
-    t.datetime "event_end"
-  end
+ActiveRecord::Schema.define(:version => 20121006010724) do
 
   create_table "sponsors", :force => true do |t|
     t.string  "name"
