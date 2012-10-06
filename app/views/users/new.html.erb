@@ -2,7 +2,7 @@
 
 <%= form_for @user, :url => account_path do |f| %>
   <% if @user.errors %>
-    <%= @user.errors %><br />
+    <%= @user.errors.inspect %><br />
   <% end %>
   <%= render :partial => "form", :object => f %>
   <%= f.submit "Register" %>

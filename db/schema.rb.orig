@@ -11,7 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20121006220706) do
+=======
+ActiveRecord::Schema.define(:version => 20121006195016) do
+>>>>>>> babc2e13786147db4368f25f715ec51baf1a4edc
 
   create_table "locations", :force => true do |t|
     t.string  "name"
@@ -36,9 +40,11 @@ ActiveRecord::Schema.define(:version => 20121006220706) do
     t.integer  "max_age"
     t.datetime "event_start",                :null => false
     t.datetime "event_end",                  :null => false
+<<<<<<< HEAD
     t.string   "location"
+=======
     t.string   "keywords"
-
+>>>>>>> babc2e13786147db4368f25f715ec51baf1a4edc
   end
 
   create_table "sponsors", :force => true do |t|
