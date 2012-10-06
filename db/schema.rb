@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121006163109) do
+ActiveRecord::Schema.define(:version => 20121006191152) do
 
   create_table "locations", :force => true do |t|
     t.string  "name"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(:version => 20121006163109) do
     t.string  "password",                                                      :null => false
     t.string  "email",            :limit => 100,                               :null => false
     t.decimal "rating",                          :precision => 2, :scale => 1
+    t.string  "picture_id"
   end
 
   create_table "users", :force => true do |t|
@@ -69,6 +70,7 @@ ActiveRecord::Schema.define(:version => 20121006163109) do
     t.integer  "location_id"
     t.float    "rating",                             :default => 0.0, :null => false
     t.integer  "age",                                                 :null => false
+    t.string   "picture_id"
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true
