@@ -1,5 +1,5 @@
 HelpingHand::Application.routes.draw do
-  root :to => 'user#show'
+  root :controller => :home, :action => :index
 
   resources :users,
     :controller => :users
