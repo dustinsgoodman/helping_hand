@@ -20,38 +20,45 @@ body[role="main"]
 	max-width: 62em
 	background: $light
 
-#userbar
-	.container
-		max-width: 64em
 
-		> a
-			@include hellenic
-			@include biggerText
-			float: left
-			margin: 0
-			display: block
-			text-transform: uppercase
-			padding: 0
-			color: $dark_green
+////////// HEADER ////////////////
+a.brand
+	@include hellenic
+	@include biggerText
+	line-height: 2em
+	float: left
+	margin: 0
+	display: block
+	text-transform: uppercase
+	padding: 0
+	color: $dark_green
+
+.headerCenter
+	margin: 0 auto
+	max-width: 62em
+
+.navbar .nav
+	float: right
+
+.navbar .brand
+	padding: 0
+	margin: 0
 
 #headerInfo, #footerInfo
 	max-width: 62em
 	margin: 0 auto
 
 ul.nav
-	width: 50%
-
-	li
-		float: right
-
 	a, a:visited
 		font-size: 1em
-		line-height: 1.5em
 		color: $dark_gray
 		text-shadow: #fff 1px 1px 0
 
 	a:hover, a:active
 		color: $darker_green
+
+
+///////////// FOOOTER ///////////////
 
 .navbar-fixed-bottom
 	background: $dark_green
@@ -62,11 +69,45 @@ ul.nav
 	p
 		color: $light
 
+////////////// MAIN CONTENT ///////////////
+
 section
-	background: pink
 	display: block
+	width: 100%
+
 	img
-		border: 10px solid $light_gray
+		border: 10px solid $light_green
 		float: left
+		max-width: 100%
+
+.left_side
+	float: left
+	width: 60%
+	padding: 0 2% 0 0
+
+	p
+		margin: 0.75em 0
+
+.right_side 
+	float: right
+	width: 40%
+	padding: 0 0 0 2%
+
+	form
+		input
+			padding: 0
+			margin: 0
+#intro
+	h2
+		@include jubuilat
+		text-decoration: uppecase
+		border-bottom: 2px solid $light_green
+
+.pull-left
+	float: none
+
+.navbar-search .search-query
+	margin-bottom: 0
+	padding: 15px 14px
 
 

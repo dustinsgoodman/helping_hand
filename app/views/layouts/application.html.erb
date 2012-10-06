@@ -11,36 +11,20 @@
     <header id="userbar">
       <div class="navbar navbar-fixed-top">
           <div class="navbar-inner">
-<<<<<<< HEAD
-            <a class="brand" href= "/" >Helping Hand</a>
-            <ul class="nav">
-              <% unless logged_in? %>
-                <li><%= link_to "Sign Up", new_account_path, :class => "signup_dialog_button" %></li>
-                <li><%= link_to "Log In", new_user_sessions_path, :class => "login_dialog_button" %></li>
-              <% else %>
-              <% if admin? %>
-              <% end %>
-                <li><%= link_to "My Account [#{current_user.name}]", account_path %></li>
-                <li><%= link_to "Logout", user_sessions_path, :method => :delete %></li>
-              <% end %>
-            </ul>
-=======
-              <div class="container">
-                <a class="brand" href="/">Helping Hand</a>
-                <ul class="nav">
-                  <% unless logged_in? %>
-                    <li><%= link_to "Sign Up", new_account_path, :class => "signup_dialog_button" %></li>
-                    <li><%= link_to "Log In", new_user_sessions_path, :class => "login_dialog_button" %></li>
-                  <% else %>
-                  <% if admin? %>
-                  <% end %>
-                    <li><%= link_to "My Account [#{current_user.name}]", account_path %></li>
-                    <li><%= link_to "Logout", user_sessions_path, :method => :delete %></li>
-                  <% end %>
-                </ul>
-              </div>
+            <div class="headerCenter">
+              <a class="brand" href= "/" >Helping Hand</a>
+              <ul class="nav">
+                <% unless logged_in? %>
+                  <li><%= link_to "Sign Up", new_account_path, :class => "signup_dialog_button" %></li>
+                  <li><%= link_to "Log In", new_user_sessions_path, :class => "login_dialog_button" %></li>
+                <% else %>
+                <% if admin? %>
+                <% end %>
+                  <li><%= link_to "My Account [#{current_user.name}]", account_path %></li>
+                  <li><%= link_to "Logout", user_sessions_path, :method => :delete %></li>
+                <% end %>
+              </ul>
             </div>
->>>>>>> 61afc70f7e2c2b5c490227923e50e0f9175174bd
           </div>
         </div>
     </header>
