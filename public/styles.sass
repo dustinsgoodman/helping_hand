@@ -155,6 +155,16 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
 
 button, input[type="button"], input[type="reset"], input[type="submit"]
 	background: $light_green
+	border: 0
+	padding: 5px 10px
+	-webkit-border-radius: 10px 
+	-moz-border-radius: 10px 
+	border-radius: 10px 
+
+button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover
+	background: $dark_green
+	color: $light
+
 
 @media only screen and (min-width: 320px) and (max-width: 650px)
 	ul.nav
