@@ -3,6 +3,8 @@ HelpingHand::Application.routes.draw do
 
   resource :account, :controller => "users"
   resources :users
+  resource :users, :controller => "users", :action => "edit"
+  resource :users, :controller => "users", :action => "udpate"
 
   resource :user_sessions
   match "login", :to => 'user_sessions#new', :action => 'login'
