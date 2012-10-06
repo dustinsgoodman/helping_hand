@@ -11,16 +11,18 @@
     <header id="userbar">
       <div class="navbar navbar-fixed-top">
           <div class="navbar-inner">
-            <a class="brand" href= "/" >Helping Hand</a>
-            <ul class="nav">
-              <% unless logged_in? %>
-                <li><%= link_to "Sign Up", new_account_path, :class => "signup_dialog_button" %></li>
-                <li><%= link_to "Log In", new_user_sessions_path, :class => "login_dialog_button" %></li>
-              <% else %>
-                <li><%= link_to "My Account [#{current_user.name}]", account_path %></li>
-                <li><%= link_to "Logout", user_sessions_path, :method => :delete %></li>
-              <% end %>
-            </ul>
+            <div class="headerCenter">
+              <a class="brand" href= "/" >Helping Hand</a>
+              <ul class="nav">
+                <% unless logged_in? %>
+                  <li><%= link_to "Sign Up", new_account_path, :class => "signup_dialog_button" %></li>
+                  <li><%= link_to "Log In", new_user_sessions_path, :class => "login_dialog_button" %></li>
+                <% else %>
+                  <li><%= link_to "My Account [#{current_user.name}]", account_path %></li>
+                  <li><%= link_to "Logout", user_sessions_path, :method => :delete %></li>
+                <% end %>
+              </ul>
+            </div>
           </div>
         </div>
     </header>
