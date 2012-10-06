@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121006150503) do
+ActiveRecord::Schema.define(:version => 20121006150625) do
 
   create_table "locations", :force => true do |t|
     t.string  "name"
@@ -22,6 +22,21 @@ ActiveRecord::Schema.define(:version => 20121006150503) do
     t.float   "long"
     t.float   "lat"
     t.integer "zip"
+  end
+
+  create_table "opportunities", :force => true do |t|
+    t.string   "name",                       :null => false
+    t.text     "description"
+    t.integer  "owner_id",                   :null => false
+    t.integer  "score"
+    t.integer  "max_ppl"
+    t.integer  "min_ppl",                    :null => false
+    t.integer  "num_ppl",     :default => 0, :null => false
+    t.integer  "min_age"
+    t.integer  "max_age"
+    t.integer  "location_id",                :null => false
+    t.datetime "event_start",                :null => false
+    t.datetime "event_end",                  :null => false
   end
 
   create_table "sponsors", :force => true do |t|
