@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121006150341) do
+ActiveRecord::Schema.define(:version => 20121006150503) do
+
+  create_table "locations", :force => true do |t|
+    t.string  "name"
+    t.string  "county"
+    t.string  "city"
+    t.string  "state"
+    t.string  "addr"
+    t.float   "long"
+    t.float   "lat"
+    t.integer "zip"
+  end
 
   create_table "sponsors", :force => true do |t|
     t.string  "name"
