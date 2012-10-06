@@ -1,14 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>HelpingHand</title>
+  <title>Helping Hand</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header id="userbar">
+    <nav>
+      <ul>
+        <% unless logged_in? %>
+          <li><%= link_to "Sign Up", new_user_path, :class => "signup_dialog_button" %></li>
+          
+        <% else %>
+          <% if admin? %>
+          <% end %>
+          <li><%= link_to "My Account [#{current_user.name}]", user_path %></li>
+          
+        <% end %>
+      </ul>
+    </nav>
+  </header>
+  
+  <header id="masthead">
+    <h1>Welcome to Helping Hand</h1>
+    <ul id="navMenu">
+      <li>Some Link</li>
+      <li>Some Other Link</li>
+    </ul>
+  </header>
+  
+  <section id="flashcontainer"></section>
+  
+  <%= yield %>
 
-<%= yield %>
+  <footer id="area-links">
+    <dvi><%= yield(:footer) %></div>
+  </footer>
+
+  <footer id="pagefooter">
+    <div>
+      <p class="provider-link">Copyright <%= Time.now.year %> Helping Hand</p>
+    </div>
+  </footer>
 
 </body>
 </html>
