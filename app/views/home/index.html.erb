@@ -14,7 +14,7 @@
               <div>
         <ul>
           <% @opportunity.each do |bob| %>
-            <h1><%= bob.name %></h1>
+            <h1><%= link_to(bob.name, opportunity_path(bob)) %></h1>
             <p><%= bob.description %></p>
             <ul>
               <li>Start:<%= bob.event_start%></li>

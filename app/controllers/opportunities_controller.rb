@@ -25,7 +25,7 @@ class OpportunitiesController < ApplicationController
     #params["opportunity"]["event_start"] = DateTime.parse(params["opportunity"]["event_start"])
     #params["opportunity"]["event_end"] = DateTime.parse(params["opportunity"]["event_end"]) 
     #@opportunity = Opportunity.new(params["opportunity"])
-    @opportunity = Opportunity.new(:name => params["opportunity"]["name"], :description => params["opportunity"]["description"], :max_ppl => params["opportunity"]["max_ppl"], :min_ppl => params["opportunity"]["min_ppl"], :num_ppl => 1, :event_start => finalstart, :event_end => finaldend, :location => params["opportunity"]["location"])
+    @opportunity = Opportunity.new(:name => params["opportunity"]["name"], :description => params["opportunity"]["description"], :max_ppl => params["opportunity"]["max_ppl"], :min_ppl => params["opportunity"]["min_ppl"], :num_ppl => 1, :event_start => finalstart, :event_end => finaldend)
     q = @opportunity
     if q.save
       flash[:notice] = "Volunteering event created successfully."
@@ -71,7 +71,7 @@ class OpportunitiesController < ApplicationController
   private
   
   def find_opportunity
-    @opportunity = Opportunities.find(params[:id])
+    @opportunity = Opportunity.find(:first, params[:id])
   end
   
 end
