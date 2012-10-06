@@ -1,28 +1,19 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Helping Hand</title>
-    <!-- Bootstrap -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
-  </head>
-  <body>
-    <h1>Welcome to Helping Hand</h1>
-    <h2>Opportunity: <%= @opportunity.name%></h2>
-    <%= if @owner
-      @owner
-      end
-    %>
+ <body>
+   <h1>Welcome to Helping Hand</h1>
+   <h2>Opportunity: <%= @opportunity.name%></h2>
+   <%= if @owner
+     @owner
+     end
+   %>
 	<p>Event Description: <%= @opportunity.description%></p>
 	<p>Date: <%= @opportunity.event_start %> to <%= @opportunity.event_end %></p>
 	<p>Location: <%= @opportunity.location.name %></p>
 	<p>People Attending: <%= @opportunity.num_ppl %></p>
-		<p style="color:red"><%= %>
-   <ul class="nav nav-tabs">
-        <li class="active"><a href="#">User</a></li>
-        <li><a href="#">Sponsor</a>
-        </li>
-    </ul>
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-  </body>
-</html>
+	<p style="color:red"><%= %>
+  	<ul class="nav nav-tabs">
+       <li class="active"><a href="#">User</a></li>
+       <li><a href="#">Sponsor</a>
+       </li>
+   	</ul>
+   <script src="http://code.jquery.com/jquery-latest.js"></script>
+ </body>
