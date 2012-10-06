@@ -1,17 +1,25 @@
-<p>This is the opportunity creation page</p>
+<h2 style="text-align:center">Create a New Volunteer Opportunity</h2><br />
 
-<%= form_for @opportunity do |f| %>
-  <%= f.label :name, 'Event Name' %>:
-  <%= f.text_field :name %><br />
-  <%= f.label :decription, 'Event Description' %>:
-  <%= f.text_field :description %><br />
-  <%= f.label :event_start, 'Start Date and Time' %>:
-  <%= f.text_field :event_start %><br />
-  <%= f.label :event_end, 'End Date and Time' %>:
-  <%= f.text_field :event_end %><br />
-  <%= f.label :min_ppl, 'Minimum Number of Volunteers' %>:
-  <%= f.text_field :min_ppl %><br />
-  <%= f.label :max_ppl, 'Maximum Number of Volunteers' %>:
-  <%= f.text_field :max_ppl %><br />
-  <%= f.submit %>
-<% end %>
+<div style="text-align:center">
+  <%= form_for @opportunity do |f| %>
+	  <%= f.label :name, 'Event Name' %>
+	  <%= f.text_field :name %><br />
+	  <%= f.label :location, 'Event Location' %>
+	  <%= f.text_field :location %><br />
+	  <%= f.label :decription, 'Event Description' %>
+	  <%= f.text_area :description, :cols => 15, :rows => 5 %><br />
+	  <%= f.label :event_start, 'Start Date and Time' %>
+	  <%= f.text_field :event_start, :class => "datetime" %>
+	  <%#= f.text_field :event_start, :class => "datepicker" %>
+	  <%= f.label :event_end, 'End Date and Time' %>
+	  <%= f.text_field :event_end, :class => "datetime" %>
+	  <%#= f.text_field :event_end, :class => "datepicker" %>
+	  <%= f.label :min_ppl, 'Minimum Number of Volunteers' %>
+	  <%= f.text_field :min_ppl %><br />
+	  <%= f.label :max_ppl, 'Maximum Number of Volunteers' %>
+	  <%= f.text_field :max_ppl %><br />
+	  <%= f.submit %>
+  <% end %>
+</div>
+
+<script>$('.datetime').datetimepicker();</script>

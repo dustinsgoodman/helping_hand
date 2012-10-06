@@ -14,3 +14,6 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+//= require bootstrap-datepicker
+//= require jquery-ui-1.8.24.custom.min
+//= require jquery-ui-timepicker-addon
