@@ -36,9 +36,8 @@ ActiveRecord::Schema.define(:version => 20121006220706) do
     t.integer  "max_age"
     t.datetime "event_start",                :null => false
     t.datetime "event_end",                  :null => false
-    t.string   "location"
     t.string   "keywords"
-
+    t.string   "location"
   end
 
   create_table "sponsors", :force => true do |t|

@@ -18,7 +18,8 @@
                   <li><%= link_to "Sign Up", new_account_path, :class => "signup_dialog_button" %></li>
                   <li><%= link_to "Log In", new_user_sessions_path, :class => "login_dialog_button" %></li>
                 <% else %>
-                  <li><%= link_to "My Account [#{current_user.name}]", user_path(current_user) %></li>
+                  <li><%= link_to "Create Volunteering Event", new_opportunity_path %></li>
+		  <li><%= link_to "My Account [#{current_user.name}]", user_path(current_user) %></li>
                   <li><%= link_to "Logout", user_sessions_path, :method => :delete %></li>
                 <% end %>
               </ul>
