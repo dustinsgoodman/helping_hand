@@ -1,21 +1,61 @@
-<body>
-  <h1>Welcome to Helping Hand</h1>
-  <h2>User <%= @user.inspect %></h2>
-  <p>Name</p>
-  <p>Email</p>
-  <p>Location</p>
-  <p>Rating</p>
-  <p>Age</p>
-  <%= if @owner
-    @owner
-    end
-  %>
+<div class="profile">
+	<div class="profile_pic">
+		
+	</div>
+	<div class="profile_info">
+		<h2><%= @user.name %></h2>
+		<h4><%= @user.email %></h4>
+		<table>
+			<tr>
+				<td>Age</td>
+				<td><%= @user.age %></td>
+			</tr>
+			<tr>
+				<td>Location</td>
+				<td><%= @user.location.nil? ? "<em>Location not provided.</em>" : @user.locatoin %></td>
+			</tr>
+			<tr>
+				<td>Rating</td>
+				<td><%= @user.rating %></td>
+			</tr>
+		</table>
+	</div>
+</div>
+<div class="events">
+	<p>
+  <b>Login:</b>
+  <%=h @user.login %>
+</p>
+<p>
+  <b>Login count:</b>
+  <%=h @user.login_count %>
+</p>
 
-  <ul class="nav nav-tabs">
-      <li class="active"><a href="#">User</a></li>
-      <li><a href="#">Sponsor</a>
-      </li>
-  </ul>
-  <script src="http://code.jquery.com/jquery-latest.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-</body>
+<p>
+  <b>Last request at:</b>
+  <%=h @user.last_request_at %>
+</p>
+
+<p>
+  <b>Last login at:</b>
+  <%=h @user.last_login_at %>
+</p>
+
+<p>
+  <b>Current login at:</b>
+  <%=h @user.current_login_at %>
+</p>
+
+<p>
+  <b>Last login ip:</b>
+  <%=h @user.last_login_ip %>
+</p>
+
+<p>
+  <b>Current login ip:</b>
+  <%=h @user.current_login_ip %>
+</p>
+
+
+<%= link_to 'Edit', edit_account_path %>
+</div>
