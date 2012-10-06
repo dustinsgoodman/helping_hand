@@ -27,7 +27,7 @@
         </div>
     </header>
   </div>
-
+  <section id="main_content">
 
   <!-- <header id="masthead">
     <ul id="navMenu">
@@ -36,20 +36,18 @@
     </ul>
   </header> -->
 
-  <section id="flashcontainer"></section>
+    <section id="flashcontainer"></section>
 
-  <%= yield %>
+    <%= yield %>
 
-  <footer id="area-links">
-    <dvi><%= yield(:footer) %></div>
-  </footer>
-
+    <footer id="area-links">
+      <dvi><%= yield(:footer) %></div>
+    </footer>
+  </section>
   <footer id="pagefooter">
-    <div class="navbar navbar-fixed-bottom">
       <div id="footerInfo">
         <p class="provider-link">Copyright <%= Time.now.year %> Helping Hand</p>
       </div>
-    </div>
   </footer>
   <script type="text/javascript" src="//use.typekit.net/oyp3uzd.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>

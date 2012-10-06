@@ -16,8 +16,9 @@ body
 	color: $dark_gray
 	background: $light
 
-body[role="main"]
+#main
 	max-width: 62em
+	margin: 0 auto
 	background: $light
 
 
@@ -63,13 +64,18 @@ ul.nav
 .navbar-fixed-bottom
 	background: $dark_green
 
-#pagefooter .navbar
+
+#pagefooter
+	clear: both
 	padding: 1.5em 0
+	background: $light_green
 
 	p
 		color: $light
-
 ////////////// MAIN CONTENT ///////////////
+#main_content
+	margin: 0 0 1.5em 0
+	overflow: hidden
 
 section
 	display: block
@@ -95,14 +101,14 @@ section
 
 	form
 		input
-			padding: 0
-			margin: 0
 			width: 100%
-#intro
-	h2, h3
-		@include jubuilat
-		text-decoration: uppecase
-		border-bottom: 2px solid $light_green
+
+h2, h3
+	@include jubuilat
+	font-size: 1.1706em
+	margin: 0.6em 0 0.6814em 0
+	text-decoration: uppecase
+	border-bottom: 2px solid $light_green
 
 .pull-left
 	float: none
@@ -115,4 +121,25 @@ section
 #search_area
 	border-bottom: 1px solid $gray
 	margin: 0 0 1.5em 0
-	padding: 0.75em 0
+	padding: 0 0 0.75em 0
+
+
+td label
+	font-size: 1em
+	line-height: 1.5em
+	margin: 0
+	font-weight: bold
+
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"],input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"],input[type="tel"], input[type="color"], .uneditable-input
+	padding: 0 5px
+	color: $dark_gray
+	line-height: 1.5em
+	height: 3em
+	-webkit-border-radius: 15px
+	-moz-border-radius: 15px
+	border-radius: 15px
+
+button, input[type="button"], input[type="reset"], input[type="submit"]
+	background: $light_green
+
+	
