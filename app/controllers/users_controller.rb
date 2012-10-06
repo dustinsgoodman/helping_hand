@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   
+  before_filter(:find_user, :only => [:show, :edit, :update, :destroy])
   before_filter :require_no_user, :only => [:new, :create]
   
   def index
@@ -41,6 +42,12 @@ class UsersController < ApplicationController
   end
 
   def show
+  end
+
+  private
+  
+  def find_user
+    @user = User.find(:first, params[:id])
   end
 
 end
