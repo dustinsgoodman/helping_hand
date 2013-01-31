@@ -18,3 +18,6 @@
 /log/development.log
 /tmp/pids/server.pid
 /tmp/cache/assets/*
+
+development.sqlite3
+/db/development.sqlite3
